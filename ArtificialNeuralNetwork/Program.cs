@@ -10,12 +10,15 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
+            #region Perceptron
+
             #region AND Gate
             double[,] inputAnd = new double[,] { { 1, 0 }, { 1, 1 }, { 0, 1 }, { 0, 0 } };
             int[] outputAnd = new int[] { 0, 1, 0, 0 };
 
             Perceptron p1 = new Perceptron();
             p1.Training(inputAnd, outputAnd);
+            Console.WriteLine("Test with Perceptron");
             Console.WriteLine("AND Gate");
             Console.WriteLine("Iteration of training: " + p1.Iteration);
             Console.WriteLine("Test 1: " + p1.Run(new double[,] { { 1, 0 } }));
@@ -34,7 +37,6 @@ namespace ArtificialNeuralNetwork
             Console.WriteLine("Test 2: " + p2.Run(new double[,] { { 0, 0 } }));
             #endregion
 
-
             #region NOT Gate
             double[,] inputNot = new double[,] { { 1 }, { 0 } };
             int[] outputNot = new int[] { 0, 1 };
@@ -45,6 +47,17 @@ namespace ArtificialNeuralNetwork
             Console.WriteLine("Iteration of training: " + p3.Iteration);
             Console.WriteLine("Test 1: " + p3.Run(new double[,] { { 0 } }));
             Console.WriteLine("Test 2: " + p3.Run(new double[,] { { 1 } }));
+            #endregion
+
+            #endregion
+
+            #region Multilayer Parceptron
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Test with MLP");
+            MultilayerPerceptron mlp = new MultilayerPerceptron(2, 6, 1);
+            mlp.Training(new double[,] { { 1, 1 }, { 1, 0 }, { 0, 0 }, { 0, 1 } }, new double[] {1, 1, 0, 1});
+            Console.WriteLine("AND Gate: " + mlp.Run(new double[] { 1, 1 }).FirstOrDefault());
+
             #endregion
 
             Console.ReadKey();
