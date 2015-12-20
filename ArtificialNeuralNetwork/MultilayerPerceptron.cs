@@ -57,7 +57,6 @@ namespace ArtificialNeuralNetwork
                 }
 
                 iteration++;
-                System.Diagnostics.Debug.WriteLine(error);
             } while (error >= _error);
         }
 
