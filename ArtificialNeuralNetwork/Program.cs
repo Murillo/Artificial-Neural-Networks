@@ -17,6 +17,7 @@ namespace ArtificialNeuralNetwork
             LinearRegression linearRegression = new LinearRegression();
             linearRegression.Training(input, output);
             Console.WriteLine("Test: " + linearRegression.Run(0.5d));
+            Console.WriteLine("Coefficient Determination: " + linearRegression.CoefficientDetermination);
             Console.WriteLine("------------------------------");
             #endregion
 

@@ -5,6 +5,7 @@ namespace ArtificialNeuralNetwork
 {
     public class LinearRegression
     {
+        public double CoefficientDetermination { get; private set; }
         private double _valueM;
         private double _valueB;
         private double _error;
@@ -30,6 +31,8 @@ namespace ArtificialNeuralNetwork
 
             _valueM = (meanValueXY - (meanValueX * meanValueY)) / (meanSquareValueX - (Math.Pow(meanValueX, 2)));
             _valueB = meanValueY - (_valueM * meanValueX);
+
+            CoefficientDetermination = GetCoefficientDetermination(inputs, outputs, meanValueY);
         }
 
         private double MeanValue(double[] input)
@@ -49,6 +52,19 @@ namespace ArtificialNeuralNetwork
         {
             var joinSumValues = inputX.Select((x, index) => x * outputY[index]).ToArray();
             return joinSumValues.Aggregate((a, b) => a + b) / joinSumValues.Length;
+        }
+
+        private double GetCoefficientDetermination(double[] inputs, double[] outputs, double meanValueY)
+        {
+            double ssLine = 0d;
+            double ssOutput = 0d;
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                ssLine += Math.Pow((outputs[i] - (_valueM * inputs[i] + _valueB)), 2);
+                ssOutput += Math.Pow((outputs[i] - meanValueY), 2);
+            }
+
+            return 1 - (ssLine / ssOutput);
         }
     }
 }
