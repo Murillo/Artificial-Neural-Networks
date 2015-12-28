@@ -10,16 +10,6 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
-            #region Linear Regression
-            Console.WriteLine("Test with Linear Regression");
-            double[] input = new double[] { -2, -1, 1, 4 };
-            double[] output = new double[] { -3, -1, 2, 3 };
-            LinearRegression linearRegression = new LinearRegression();
-            linearRegression.Training(input, output);
-            Console.WriteLine("Test: " + linearRegression.Run(0.5d));
-            Console.WriteLine("Coefficient Determination: " + linearRegression.CoefficientDetermination);
-            Console.WriteLine("------------------------------");
-            #endregion
 
             #region Perceptron
 
@@ -69,6 +59,8 @@ namespace ArtificialNeuralNetwork
             mlp.Training(new double[,] { { 1, 1 }, { 1, 0 }, { 0, 0 }, { 0, 1 } }, new double[] {1, 1, 0, 1});
             Console.WriteLine("AND Gate: " + mlp.Run(new double[] { 1, 1 }).FirstOrDefault());
             #endregion
+
+         
 
             Console.ReadKey();
         }
