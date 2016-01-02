@@ -1,5 +1,8 @@
 package artificialneuralnetwork;
 
+import artificialneuralnetwork.perceptron.Perceptron;
+import artificialneuralnetwork.mlp.MultilayerPerceptron;
+
 public class ArtificialNeuralNetwork {
     
     public static void main(String[] args) {
@@ -33,6 +36,13 @@ public class ArtificialNeuralNetwork {
         System.out.println("Iteration of training: " + p3.getIteration());
         System.out.println("Test 1: " + p3.run(new double[][] { { 0 } }));
         System.out.println("Test 2: " + p3.run(new double[][] { { 1 } }));
+        
+
+        System.out.println("----------------------");
+        System.out.println("Artificial Neural Network - MLP");
+        MultilayerPerceptron mlp = new MultilayerPerceptron(2, 6, 1);
+        mlp.training(new double[][] { { 1, 1 }, { 1, 0 }, { 0, 0 }, { 0, 1 } }, new double[] { 1, 0, 0, 0 });
+        System.out.println("AND Gate: " + Math.round(mlp.run(new double[] { 1, 1 })[0]));
     }
     
 }

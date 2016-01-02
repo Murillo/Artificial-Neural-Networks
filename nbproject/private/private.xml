@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/msgrubler-pc/Desktop/New/ArtificialNeuralNetwork/src/artificialneuralnetwork/ArtificialNeuralNetwork.java</file>
+            <file>file:/C:/Users/msgrubler-pc/Documents/GitHub/Artificial-Neural-Networks/src/artificialneuralnetwork/mlp/MultilayerPerceptron.java</file>
+            <file>file:/C:/Users/msgrubler-pc/Documents/GitHub/Artificial-Neural-Networks/src/artificialneuralnetwork/mlp/Neuron.java</file>
+            <file>file:/C:/Users/msgrubler-pc/Documents/GitHub/Artificial-Neural-Networks/src/artificialneuralnetwork/mlp/Layer.java</file>
+            <file>file:/C:/Users/msgrubler-pc/Documents/GitHub/Artificial-Neural-Networks/src/artificialneuralnetwork/Perceptron.java</file>
         </group>
     </open-files>
 </project-private>
